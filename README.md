@@ -12,6 +12,6 @@ An e-commerce web app in which products are Dalmatian puppies that users can res
 
 Photo Credits: 
 Dotty: https://www.flickr.com/photos/alizzia13/4573769838
-Suzie: https://commons.wikimedia.org/wiki/File:Dalmatian_puppy,_three_weeks-8.JPG
+Suzie: https://commons.wikimedia.org/wiki/File:Dalmatian_puppy.JPG
 Ralph: https://www.flickr.com/photos/wwwpgflickrcom/2089047447/
 Cruella De Vil: https://pixabay.com/en/cruella-de-ville-cruella-de-ville-2267126/
