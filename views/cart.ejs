@@ -1,0 +1,86 @@
+<% var cart = cart %>
+<% include partials/header %>
+
+
+<% if (cart.totalQty > 0) %>
+	<div class="container">
+		<ul class="list-group">
+			<% if (cart["puppies"]) %>
+			<% cart["puppies"].forEach(function(puppy){ %>
+				<li class="list-group-item">
+					<strong><%= puppy.name %></strong>
+					<span class="label label-success">$<%= puppy.price %></span>
+					<div class="btn-group">
+						<a href="/remove-from-cart/<%= puppy._id%>" class="btn btn-warning btn-xs">Save later</a>
+					</div>
+				</li>
+			<% });%>
+		</ul>
+	</div>
+
+<div class="container">
+	<div class="fix-margin">
+		<strong>Total: $<%= cart.totalPrice %></strong>
+	</div>
+</div>
+<hr>
+
+<div class="container">
+		<div class="fix-margin">
+			<div id="paypal-button"></div>
+
+		  <script>
+
+		    paypal.Button.render({
+		      env: 'sandbox', // Or 'sandbox',
+
+		      commit: true, // Show a 'Pay Now' button
+
+		      style: {
+		        color: 'gold',
+		        size: 'small'
+		      },
+		      
+		      payment: function() {
+		      	/* Make a call to the server to set up the payment */
+		        return paypal.request.post("http://localhost:3000/paypal/create-payment")
+		            .then(function(data) { 
+		            	return data.id;
+		            })
+		    	},
+
+		      onAuthorize: function(data, actions) {
+		        /* 
+		         * Execute the payment here 
+		         */
+		        return paypal.request.post("http://localhost:3000/paypal/execute-payment",
+		        	{
+                paymentID: data.paymentID,
+                payerID:   data.payerID
+            	}).then(function(res) {
+
+                // The payment is complete!
+                // You can now show a confirmation message to the customer
+                window.alert("YOU SAVED THE PUPPIES! THANK YOU!");
+                document.location.replace("/success");
+            	});
+		      },
+
+		      onCancel: function(data, actions) {
+		        /* 
+		         * Buyer cancelled the payment 
+		         */
+		        console.log("BUYER CANCELLED!");
+		      },
+
+		      onError: function(err) {
+		        /* 
+		         * An error occurred during the transaction 
+		         */
+		        console.log(err);
+		      }
+		    }, '#paypal-button');
+		  </script>
+		</div>
+</div>
+<% include partials/footer %>

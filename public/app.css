@@ -1,0 +1,96 @@
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #FFFFFF;
+    font-family: "Montserrat", "Avenir";
+    text-transform: uppercase;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: rgb(226, 197, 143);
+}
+
+.navbar-inverse .navbar-brand {
+    color: rgb(226, 197, 143);
+    text-transform: uppercase;
+    font-family: "Montserrat", "Avenir";
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: rgb(226, 197, 143);
+}
+
+.jumbotron {
+background: #D31027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.jumbotron h2 {
+	max-width: 800px;
+	text-align: center;
+	color: white;
+	font-family: "Kavivanar";
+	text-transform: uppercase;
+}
+
+#main-text {
+	font-size: 80px;
+}
+
+#cruella {
+	font-size: 50px;
+	font-style: italic;
+}
+
+#from {
+	color: black;
+	font-family: "Dancing Script";
+	text-transform: lowercase;
+	font-size: 60px;
+}
+/*.thumbnail {
+	min-height: 400px;
+}*/
+
+.thumbnail img {
+	max-height: 250px;
+	border-radius: 10px;
+}
+
+.thumbnail .caption h3 {
+	text-align: center;
+	margin-top: 0;
+}
+
+.description {
+	color: rgb(105, 105, 105);
+}
+
+.price {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+ul.list-group{
+	margin-top: 35px;
+}
+
+li.list-group-item {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.fix-margin {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.cruella {
+	max-height: 250px;
+	text-align: center;
+}
